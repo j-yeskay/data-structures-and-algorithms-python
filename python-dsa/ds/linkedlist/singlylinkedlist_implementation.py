@@ -71,8 +71,20 @@ class LinkedList:
                 previousnode = currentnode
                 currentnode = currentnode['next']
                 counter = counter + 1
-                
+        
+    def reverse(self):
+        previousnode = None
+        currentnode = self.head
+        while(currentnode != None):
+            nextnode = currentnode['next']
+            currentnode['next'] = previousnode
+            previousnode = currentnode
+            currentnode = nextnode
+        self.tail = self.head
+        self.head = previousnode
+
     
+           
     def __repr__(self):
        return f"HEAD : {self.head} \nTAIL : {self.tail} \nLENGTH : {self.length}"
 
