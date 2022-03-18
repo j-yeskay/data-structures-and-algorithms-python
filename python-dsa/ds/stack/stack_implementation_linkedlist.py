@@ -12,7 +12,7 @@ class Stack:
         self.size = size
     
     def peek(self):
-        return self.top.value
+        return self.top
     
     def push(self, value):
         if(self.length < self.size):
@@ -36,7 +36,7 @@ class Stack:
             else:
                 self.top = self.top.next
             self.length = self.length - 1
-            return topnode.value
+            return topnode
         else:
             print("Stack UnderFlow!")
 
