@@ -9,7 +9,6 @@ class Node:
 		return str(self.value)
 
 
-
 def breadthFirstSearchValues_iterative(root):
 	queue = [ root ]
 	values = []
@@ -28,13 +27,32 @@ def breadthFirstSearchValues_iterative(root):
 	return values
 
 
+def level_order_traversal(root):
+	if root == None:
+		return None
+	else:
+		values = []
+		queue = [root]
+
+		while queue != []:
+			length = len(queue)
+			values.append([])
+			for i in range(length):
+				currentnode = queue.pop(0)
+				values[-1].append(currentnode.value)
+				if currentnode.left:
+					queue.append(currentnode.left)
+				if currentnode.right:
+					queue.append(currentnode.right)
+		return values
+
+
 a = Node('a')
 b = Node('b')
 c = Node('c')
 d = Node('d')
 e = Node('e')
 f = Node('f')
-
 
 a.left = b
 a.right = c
